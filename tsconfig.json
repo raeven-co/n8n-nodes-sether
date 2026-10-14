@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"strict": true,
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"target": "es2022",
+		"lib": ["es2022"],
+		"types": ["node"],
+		"rootDir": ".",
+		"outDir": "./dist/",
+		"removeComments": true,
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noUncheckedIndexedAccess": true,
+		"noFallthroughCasesInSwitch": true,
+		"exactOptionalPropertyTypes": true,
+		"useUnknownInCatchVariables": true,
+		"esModuleInterop": true,
+		"declaration": true,
+		"sourceMap": true,
+		"skipLibCheck": true
+	},
+	"include": ["nodes/**/*.ts", "test/**/*.ts"]
+}

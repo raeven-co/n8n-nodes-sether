@@ -1,0 +1,59 @@
+{
+  "name": "n8n-nodes-sether",
+  "version": "0.1.0",
+  "description": "n8n community node: PII redaction with Sether, plus a tool-call guardrail that rejects unknown, altered, or dropped tokens before restoring.",
+  "license": "MIT",
+  "author": {
+    "name": "Godfrey Lebo",
+    "email": "emorylebo@gmail.com"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "pii",
+    "redaction",
+    "guardrail",
+    "llm",
+    "agents",
+    "sether"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/copy-static.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "eslint . --max-warnings 0",
+    "test": "vitest run",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": false,
+    "credentials": [],
+    "nodes": [
+      "dist/nodes/Sether/Sether.node.js"
+    ]
+  },
+  "dependencies": {
+    "@raeven-co/sether": "0.7.0",
+    "libphonenumber-js": "1.13.14"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.29.0",
+    "@n8n/eslint-plugin-community-nodes": "0.35.0",
+    "@types/node": "24.19.0",
+    "eslint": "9.29.0",
+    "eslint-plugin-n8n-nodes-base": "1.16.7",
+    "n8n-workflow": "2.41.2",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.70.0",
+    "vitest": "4.1.11"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
